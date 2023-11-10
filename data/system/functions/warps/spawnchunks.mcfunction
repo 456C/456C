@@ -1,0 +1,1 @@
+execute as @s run tp @s 0 -40 0
