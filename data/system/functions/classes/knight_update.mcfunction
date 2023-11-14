@@ -1,0 +1,6 @@
+
+execute as @a[scores={giveClass=1},team=Solo] run replaceitem entity @s armor.chest iron_chestplate{Trim:{pattern:shaper,material:iron},Enchantments:[{lvl:1,id:binding_curse},{lvl:1,id:vanishing_curse}],Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
+execute as @a[scores={giveClass=1},team=Teal] run replaceitem entity @s armor.chest iron_chestplate{Trim:{pattern:shaper,material:iron},Enchantments:[{lvl:1,id:binding_curse},{lvl:1,id:vanishing_curse}],Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
+execute as @a[scores={giveClass=1},team=Magenta] run replaceitem entity @s armor.chest iron_chestplate{Trim:{pattern:shaper,material:iron},Enchantments:[{lvl:1,id:binding_curse},{lvl:1,id:vanishing_curse}],Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
+execute as @a[scores={giveClass=1},team=Lime] run replaceitem entity @s armor.chest iron_chestplate{Trim:{pattern:shaper,material:iron},Enchantments:[{lvl:1,id:binding_curse},{lvl:1,id:vanishing_curse}],Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
+execute as @a[scores={giveClass=1},team=Orange] run replaceitem entity @s armor.chest iron_chestplate{Trim:{pattern:shaper,material:iron},Enchantments:[{lvl:1,id:binding_curse},{lvl:1,id:vanishing_curse}],Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
