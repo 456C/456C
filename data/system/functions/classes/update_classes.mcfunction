@@ -13,6 +13,6 @@ scoreboard players set @s[scores={SelectedClass=9},nbt=!{Inventory:[{Slot:-106b,
 
 execute unless entity @s[nbt={Inventory:[{Slot:-106b, id: "minecraft:carrot_on_a_stick"}]}] run function system:classes/redirection
 
-# eaten items
+# consumed items
 
 scoreboard players reset @s eatBeetroot

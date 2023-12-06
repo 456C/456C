@@ -3,6 +3,9 @@
 
 # items 1-30 trigger
 execute as @a[scores={right_click=1..}, nbt={SelectedItem:{ tag:{dragonheart:1b}, id:"minecraft:beetroot"}}] at @s run function system:items/item1
+execute as @a[scores={right_click=1..}, nbt={SelectedItem:{ tag:{cursedtalisman:1b}, id:"minecraft:piglin_head"}}] at @s run function system:items/item2
+execute as @a[scores={right_click=1..}, nbt={SelectedItem:{ tag:{woodenrake:1b}, id:"minecraft:wooden_hoe"}}] at @s run function system:items/item3
+execute as @a[scores={right_click=1..}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] at @s run function system:items/item4
 
                              
 # Reset the scoreboard

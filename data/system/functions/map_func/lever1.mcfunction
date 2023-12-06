@@ -14,5 +14,6 @@ execute if score .leverTimer obj matches 180 run fill 518 3 494 519 3 493 stone
 execute if score .leverTimer obj matches 180 as @e[type=marker, tag = Lever] at @s run playsound block.iron_door.close master @a[distance=..15] ~ ~ ~ 100 0.1
 
 # loop condition
-execute if score .leverTimer obj matches ..200 run schedule function system:map_func/lever1 1t
-execute if score .leverTimer obj matches 201 run scoreboard players reset .leverTimer obj
+execute if score .leverTimer obj matches ..200 as @e[tag=Lever] at @s if entity @a[distance=..80] run schedule function system:map_func/lever1 1t
+execute if score .leverTimer obj matches 201.. as @e[tag=Lever] at @s if entity @a[distance=..80] run scoreboard players reset .leverTimer obj
+

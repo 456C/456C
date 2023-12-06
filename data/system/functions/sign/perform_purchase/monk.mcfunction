@@ -1,0 +1,14 @@
+
+# failure
+execute as @s[tag=class_monk] run tellraw @s [{"text":"\n"},{"text":"You already own this class!","color":"red"},{"text":"\n"}]
+execute as @s[tag=!class_monk] at @s run playsound block.note_block.bass master @s ~ ~ ~ 10 0.5
+execute as @s[tag=!class_monk, scores={Tokens=..0}] run tellraw @s {"text":"You don't have enough tokens!","color":"red"}
+execute as @s[tag=!class_monk,scores={Tokens=..0}] at @s run playsound block.note_block.bass master @s ~ ~ ~ 10 0.5
+
+# success
+execute as @s[tag=!class_monk,scores={Tokens=1..}] run tellraw @s [{"text":"\n"},{"text":"Congratulations! You now own the Monk class.","color":"green"},{"text":"\n"}]
+execute as @s[tag=!class_monk,scores={Tokens=1..}] at @s run playsound block.enchantment_table.use master @s ~ ~ ~ 10 1.2
+execute as @s[tag=!class_monk,scores={Tokens=1..}] run clear @s
+execute as @s[tag=!class_monk,scores={Tokens=1..}] run scoreboard players set @s SelectedClass 2
+execute as @s[scores={SelectedClass = 2, Tokens=1..}] run scoreboard players remove @s Tokens 1
+execute as @s[scores={SelectedClass = 2}] run tag @s add class_monk

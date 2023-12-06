@@ -1,17 +1,16 @@
 
 # success
 
-execute as @s[scores={item1=0}] run scoreboard players set @s healing 6
-execute as @s[scores={item1=0}] run scoreboard players set @s slowHealing 20
-execute as @s[scores={item1=0}] run effect give @s speed 7 0 false
-execute as @s[scores={item1=0}] run effect give @s resistance 7 1 false
-execute as @s[scores={item1=0}] run effect give @s strength 6 1 false
-execute as @s[scores={item1=0}] at @s run playsound block.honey_block.place master @a[distance=..20] ~ ~ ~ 20 0.5 
-execute as @s[scores={item1=0}] at @s run playsound item.bottle.fill_dragonbreath master @a[distance=..20] ~ ~ ~ 20 0.5 
-execute as @s[scores={item1=0}] at @s run playsound entity.player.burp master @a[distance=..20] ~ ~ ~ 20 1 
+execute as @s[scores={item1=0}] run scoreboard players set @s healing 16
+execute as @s[scores={item1=0}] run scoreboard players set @s mediumHealing 26
+execute as @s[scores={item1=0}] run effect give @s slowness 12 0 false
+execute as @s[scores={item1=0}] run effect give @s resistance 3 1 false
+execute as @s[scores={item1=0}] run effect give @s strength 1 0 false
+execute as @s[scores={item1=0}] at @s run playsound item.bottle.fill_dragonbreath master @a[distance=..20] ~ ~ ~ 0.3 1.8
+execute as @s[scores={item1=0}] at @s run playsound entity.evoker.cast_spell master @a[distance=..20] ~ ~ ~ 20 1 
 
 # cooldown 
-scoreboard players set @s[scores={item1=0}] item1 17
+scoreboard players set @s[scores={item1=0}] item1 16
 
 
 # failure
