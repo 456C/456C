@@ -2,12 +2,15 @@
 # main systems
 execute if score tick120hz obj matches 0 as @a unless score @s running matches 0.. run scoreboard players add @s running 0
 function system:right_click
+
 schedule function system:clocks/main 1t replace
 execute as @a[tag=!NotNew] run team join Solo @s
 execute as @a[tag=!NotNew] run tag @s add NotNew 
 execute as @e[type=item, nbt=!{Item:{ tag:{special:1b}}}] run kill @s
 execute as @a[tag=!add3tokens] run scoreboard players add @s Tokens 3
 execute as @a[tag=!add3tokens] run tag @s add add3tokens
+execute if score tick20hz obj matches 0 run tag @a[scores={Death=1..}] remove empoweredArcher
+execute if score tick20hz obj matches 0 run scoreboard players set @a[scores={Death=1..}] totalArrows 0
 
 # Death respawn
 execute as @a[scores={Death=1..}] run function system:death/main
@@ -45,6 +48,11 @@ execute if score tick60hz obj matches 0 as @e[type=item,nbt={Item:{id:"minecraft
 execute if score tick60hz obj matches 0 as @a run function system:classes/update_classes
 execute if score tick60hz obj matches 0 as @a[scores={eatBeetroot=1..}] run function system:classes/update_classes 
 
+# invisibility func
+
+execute if score tick20hz obj matches 0 as @a[nbt={active_effects:[{id:"minecraft:invisibility"}]}] run function system:classes/armor_sets/armor_clear
+execute if score tick60hz obj matches 0 as @a[nbt=!{active_effects:[{id:"minecraft:invisibility"}]}] run function system:classes/armor_sets/armor_give
+
 
 # healing
 
@@ -65,6 +73,9 @@ execute if score tick20hz obj matches 0 as @e[scores={item1=1..}] as @s run func
 execute if score tick20hz obj matches 0 as @e[scores={item2=1..}] as @s run function system:items/item2
 execute if score tick20hz obj matches 0 as @e[scores={item3=1..}] as @s run function system:items/item3
 execute if score tick20hz obj matches 0 as @e[scores={item4=1..}] as @s run function system:items/item4
+execute if score tick20hz obj matches 0 as @e[scores={item5=1..}] as @s run function system:items/item5
+execute if score tick20hz obj matches 0 as @e[scores={item5=1..}] as @s run function system:items/item6
+
 
 # item cooldowns
 execute as @a[nbt={SelectedItem:{ tag:{dragonheart:1b}, id:"minecraft:beetroot"}}] run function system:items/timers/item1
@@ -74,10 +85,16 @@ execute as @a[nbt={SelectedItem:{ tag:{cursedtalisman:1b}, id:"minecraft:piglin_
 execute if score tick60hz obj matches 0 as @a[scores={item2=1..},nbt=!{SelectedItem:{ tag:{cursedtalisman:1b}, id:"minecraft:piglin_head"}}] run xp set @s 0 levels
 
 execute as @a[nbt={SelectedItem:{ tag:{woodenrake:1b}, id:"minecraft:wooden_hoe"}}] run function system:items/timers/item3
-execute if score tick60hz obj matches 0 as @a[scores={item2=1..},nbt=!{SelectedItem:{ tag:{cursedtalisman:1b}, id:"minecraft:piglin_head"}}] run xp set @s 0 levels
+execute if score tick60hz obj matches 0 as @a[scores={item3=1..},nbt=!{SelectedItem:{ tag:{cursedtalisman:1b}, id:"minecraft:piglin_head"}}] run xp set @s 0 levels
 
 execute as @a[nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run function system:items/timers/item4
-execute if score tick60hz obj matches 0 as @a[scores={item2=1..},nbt=!{SelectedItem:{ tag:{cursedtalisman:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 0 levels
+execute if score tick60hz obj matches 0 as @a[scores={item4=1..},nbt=!{SelectedItem:{ tag:{cursedtalisman:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 0 levels
+
+execute as @a[nbt={SelectedItem:{ tag:{nightveil:1b}, id:"minecraft:bow"}}] run function system:items/timers/item5
+execute if score tick60hz obj matches 0 as @a[scores={item6=1..},nbt=!{SelectedItem:{ tag:{nightveil:1b}, id:"minecraft:bow"}}] run xp set @s 0 levels
+
+execute as @a[nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run function system:items/timers/item6
+execute if score tick60hz obj matches 0 as @a[scores={item6=1..},nbt=!{SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 0 levels
 
 # spawn mobs
 execute if score tick120hz obj matches 0 as @e[tag=summon, type=marker] run function system:mob_waves/summon
@@ -99,5 +116,6 @@ execute if score tick60hz obj matches 0 as @a[scores={villager=1..}] run scorebo
 # reset sneak time
 execute if score tick10hz obj matches 0 run scoreboard players reset @a[scores={isCrouching=1..}] isCrouching
 
+# kill in ground arrows
 
-
+execute as @e[type=arrow, nbt={inGround:1b}] run kill @s 

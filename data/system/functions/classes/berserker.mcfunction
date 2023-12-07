@@ -1,20 +1,6 @@
 execute as @s run function system:classes/clear
 
-execute as @s[scores={class=1},team=Solo] run item replace entity @s armor.chest with iron_chestplate{Trim:{pattern:shaper,material:iron},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
-execute as @s[scores={class=1},team=Teal] run item replace entity @s armor.chest with iron_chestplate{Trim:{pattern:shaper,material:diamond},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
-execute as @s[scores={class=1},team=Magenta] run item replace entity @s armor.chest with iron_chestplate{Trim:{pattern:shaper,material:amethyst},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
-execute as @s[scores={class=1},team=Lime] run item replace entity @s armor.chest with iron_chestplate{Trim:{pattern:shaper,material:emerald},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
-execute as @s[scores={class=1},team=Orange] run item replace entity @s armor.chest with iron_chestplate{Trim:{pattern:shaper,material:gold},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
-
-execute as @s[scores={class=1}] run item replace entity @s armor.head with netherite_helmet{Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
-
-execute as @s[scores={class=1}] run item replace entity @s armor.legs with chainmail_leggings{Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
-
-execute as @s[scores={class=1},team=Solo] run item replace entity @s armor.feet with leather_boots{Trim:{pattern:host,material:iron},display:{color:10329508},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:134}
-execute as @s[scores={class=1},team=Teal] run item replace entity @s armor.feet with leather_boots{Trim:{pattern:host,material:diamond},display:{color:8501429},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:134}
-execute as @s[scores={class=1},team=Magenta] run item replace entity @s armor.feet with leather_boots{Trim:{pattern:host,material:amethyst},display:{color:11443148},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:134}
-execute as @s[scores={class=1},team=Lime] run item replace entity @s armor.feet with leather_boots{Trim:{pattern:host,material:emerald},display:{color:11134878},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:134}
-execute as @s[scores={class=1},team=Orange] run item replace entity @s armor.feet with leather_boots{Trim:{pattern:host,material:gold},display:{color:14070404},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:134}
+execute as @s[scores={class=1}] run function system:classes/armor_sets/armor_give
 
 execute as @s[scores={class=1}] run item replace entity @s hotbar.0 with iron_sword{Unbreakable:1,frostbite:1b,tags:1b,EntityTag:{Invisible:1b},display:{Name:'[{"text":"Frostbite","italic":false,"color":"#99ccff"}]',Lore:['[{"text":"With the proper wielder, this blade","italic":false,"color":"gray"}]','[{"text":"has unstoppable potential; after","italic":false,"color":"gray"}]','[{"text":"inflicting","italic":false,"color":"gray"},{"text":" ","color":"dark_purple"},{"text":"multiple devastating","color":"white"}]','[{"text":"blows","italic":false,"color":"white"},{"text":", it will definitely ","color":"gray"},{"text":"cripple","color":"dark_aqua"},{"text":"","color":"dark_purple"}]','[{"text":"the","italic":false,"color":"gray"},{"text":" ","color":"#ccccff"},{"text":"enemy","color":"#ffcccc"},{"text":"."}]']},HideFlags:126} 1
 execute as @s[scores={class=1}] run item replace entity @s hotbar.1 with beetroot{dragonheart:1b,display:{Name:'[{"text":"Dragon\'s Heart","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Receive dragon\'s ","italic":false,"color":"gray"},{"text":"regeneration","color":"red"},{"text":","},{"text":"","color":"dark_purple"}]','[{"text":"strength","italic":false,"color":"#cc3300"},{"text":" and ","color":"gray"},{"text":"speed","color":"#9999ff"},{"text":" for a ","color":"gray"},{"text":"short","color":"white"}]','[{"text":"duration","italic":false,"color":"white"},{"text":".","color":"gray"}]']},HideFlags:30} 1

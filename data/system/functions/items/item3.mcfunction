@@ -1,7 +1,7 @@
 # success
 
 execute as @s[scores={item3=0}] at @s run particle end_rod ~ ~1 ~ 0.7 0.25 0.7 0.01 10 force
-execute as @s[scores={item3=0},nbt={OnGround:1b}] run effect give @s resistance 1 24 false
+execute as @s[scores={item3=0}] run effect give @s resistance 2 24 false
 execute as @s[scores={item3=0}] run effect give @s slow_falling 1 0 false
 execute as @s[scores={item3=0},nbt={OnGround:0b}] run effect give @s levitation 1 5 false
 execute as @s[scores={item3=0},nbt={OnGround:1b}] at @s run playsound entity.elder_guardian.curse master @a[distance=..15] ~ ~ ~ 0.5 2 1
