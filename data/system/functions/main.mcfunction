@@ -74,7 +74,7 @@ execute if score tick20hz obj matches 0 as @e[scores={item2=1..}] as @s run func
 execute if score tick20hz obj matches 0 as @e[scores={item3=1..}] as @s run function system:items/item3
 execute if score tick20hz obj matches 0 as @e[scores={item4=1..}] as @s run function system:items/item4
 execute if score tick20hz obj matches 0 as @e[scores={item5=1..}] as @s run function system:items/item5
-execute if score tick20hz obj matches 0 as @e[scores={item5=1..}] as @s run function system:items/item6
+execute if score tick20hz obj matches 0 as @e[scores={item6=1..}] as @s run function system:items/item6
 
 
 # item cooldowns

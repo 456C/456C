@@ -6,7 +6,7 @@ execute as @s[scores={item6=0}] at @s run give @s potion{display:{Name:'{"text":
 
 
 # cooldown 
-scoreboard players set @s[scores={item6=0}] item6 60
+scoreboard players set @s[scores={item6=0}] item6 30
 
 # failure
 

@@ -1,4 +1,4 @@
-summon creeper ~ ~ ~ {Fuse:0,powered:1b}
+summon creeper ~ ~1 ~ {Fuse:0,powered:1b}
 summon lightning_bolt ~ ~ ~
 
 

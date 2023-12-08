@@ -43,3 +43,5 @@ execute as @s[scores={SelectedClass=3},team=Orange] run item replace entity @s a
 execute as @s[scores={SelectedClass=3}] run item replace entity @s armor.legs with leather_leggings{display:{color:6257479},Unbreakable:1,AttributeModifiers:[{AttributeName:"generic.armor",Amount:4,Slot:legs,Name:"generic.armor",UUID:[I;-123116,18314,125831,-36628]}],HideFlags:63}
 
 execute as @s[scores={SelectedClass=3}] run item replace entity @s armor.feet with chainmail_boots{display:{color:6384472},Unbreakable:1,HideFlags:63}
+
+# mage
