@@ -2,7 +2,6 @@
 # main systems
 execute if score tick120hz obj matches 0 as @a unless score @s running matches 0.. run scoreboard players add @s running 0
 function system:right_click
-
 schedule function system:clocks/main 1t replace
 execute as @a[tag=!NotNew] run team join Solo @s
 execute as @a[tag=!NotNew] run tag @s add NotNew 
@@ -63,7 +62,7 @@ execute if score tick10hz obj matches 2 as @e run effect clear @s regeneration
 execute if score tick20hz obj matches 1 as @e[scores={slowHealing=1..}] run function system:healing/20hz
 execute if score tick20hz obj matches 2 as @e run effect clear @s regeneration
 
-# remove hunger
+# remove
 execute as @a[nbt=!{foodLevel:20}] run function system:saturation/give 
 
 # item setup
@@ -119,3 +118,11 @@ execute if score tick10hz obj matches 0 run scoreboard players reset @a[scores={
 # kill in ground arrows
 
 execute as @e[type=arrow, nbt={inGround:1b}] run kill @s 
+
+scoreboard players add @e[tag=killafter] obj 1
+execute as @e[scores={obj=420..},tag=killafter] at @s run tp @s ~ ~-100 ~
+kill @e[scores={obj=420..},tag=killafter] 
+
+execute if score tick60hz obj matches 0 run scoreboard players add @a slowHealing 0
+execute if score tick60hz obj matches 0 run scoreboard players add @a mediumHealing 0
+execute if score tick60hz obj matches 0 run scoreboard players add @a healing 0

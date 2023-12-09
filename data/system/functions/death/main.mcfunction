@@ -8,6 +8,10 @@ execute if score @s Death matches 1 run title @s subtitle {"text":"You will resp
 execute if score @s Death matches 1 run title @s title {"text":"YOU DIED","bold":true,"color":"red"}
 execute if score @s Death matches 5 run tp @s 501 500 468 -73 62
 execute if score @s Death matches 1 run clear @s carrot_on_a_stick
+execute if score @s Death matches 1 run give @s[scores={SelectedClass=3,item5=0}] arrow 1
+
+
+
 
 scoreboard players add @s Death 1
 execute if score @s Death matches 90 run tp @s 912 9 451 0.9 3.7

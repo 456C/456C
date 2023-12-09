@@ -1,4 +1,18 @@
-summon creeper ~ ~1 ~ {Fuse:0,powered:1b}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
+summon vex ~ ~1 ~ {Tags:["killafter"]}
 summon lightning_bolt ~ ~ ~
 
 

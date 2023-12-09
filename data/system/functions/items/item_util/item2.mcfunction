@@ -1,10 +1,10 @@
 scoreboard players add @s obj 1
 
-execute at @s[tag=solo2t] as @s if score tick120hz obj matches 0 run effect give @a[distance=12..40] darkness 6 0 false
-execute at @s[tag=teal2t] as @s if score tick120hz obj matches 0 run effect give @a[team=!Teal,distance=12..40] darkness 6 0 false
-execute at @s[tag=lime2t] as @s if score tick120hz obj matches 0 run effect give @a[team=!Lime,distance=12..40] darkness 6 0 false
-execute at @s[tag=magenta2t] as @s if score tick120hz obj matches 0 run effect give @a[team=!Magenta,distance=12..40] darkness 6 0 false
-execute at @s[tag=orange2t] as @s if score tick120hz obj matches 0 run effect give @a[team=!Orange,distance=12..40] darkness 6 0 false
+execute at @s[tag=solo2t] as @s if score tick120hz obj matches 0 run effect give @a[distance=12..40] darkness 4 0 false
+execute at @s[tag=teal2t] as @s if score tick120hz obj matches 0 run effect give @a[team=!Teal,distance=12..40] darkness 4 0 false
+execute at @s[tag=lime2t] as @s if score tick120hz obj matches 0 run effect give @a[team=!Lime,distance=12..40] darkness 4 0 false
+execute at @s[tag=magenta2t] as @s if score tick120hz obj matches 0 run effect give @a[team=!Magenta,distance=12..40] darkness 4 0 false
+execute at @s[tag=orange2t] as @s if score tick120hz obj matches 0 run effect give @a[team=!Orange,distance=12..40] darkness 4 0 false
 
 
 execute at @s run particle smoke ~ ~ ~ 0.3 0.3 0.3 0.01 2 force
@@ -20,5 +20,6 @@ execute at @a[team=!Lime] run kill @e[tag=lime2t, distance = ..2]
 execute at @a[team=!Magenta] run kill @e[tag=magenta2t, distance = ..2] 
 execute at @a[team=!Orange] run kill @e[tag=orange2t, distance = ..2]
 
+execute as @s[scores={obj=200..}, tag=talisman] run effect give @s glowing 3 0 true
 
 kill @e[scores={obj=600..}, tag=talisman]
