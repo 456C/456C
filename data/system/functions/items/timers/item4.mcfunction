@@ -18,6 +18,16 @@ execute as @s[scores={item4=16}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"min
 execute as @s[scores={item4=17}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 17 levels
 execute as @s[scores={item4=18}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 18 levels
 execute as @s[scores={item4=19}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 19 levels
+execute as @s[scores={item4=20}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 20 levels
+execute as @s[scores={item4=21}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 21 levels
+execute as @s[scores={item4=22}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 23 levels
+execute as @s[scores={item4=23}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 23 levels
+execute as @s[scores={item4=24}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 24 levels
+execute as @s[scores={item4=25}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 25 levels
+execute as @s[scores={item4=26}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 26 levels
+execute as @s[scores={item4=27}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 27 levels
+execute as @s[scores={item4=28}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 28 levels
+execute as @s[scores={item4=29}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 29 levels
 execute as @s[scores={item4=30}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 30 levels
 execute as @s[scores={item4=31}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 31 levels
 execute as @s[scores={item4=32}, nbt={SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] run xp set @s 33 levels

@@ -3,11 +3,18 @@
 execute if score tick120hz obj matches 0 as @a unless score @s running matches 0.. run scoreboard players add @s running 0
 function system:right_click
 schedule function system:clocks/main 1t replace
+execute as @e[type=item, nbt=!{Item:{ tag:{special:1b}}}] run kill @s
+
+# New Players Setup
 execute as @a[tag=!NotNew] run team join Solo @s
 execute as @a[tag=!NotNew] run tag @s add NotNew 
-execute as @e[type=item, nbt=!{Item:{ tag:{special:1b}}}] run kill @s
-execute as @a[tag=!add3tokens] run scoreboard players add @s Tokens 3
-execute as @a[tag=!add3tokens] run tag @s add add3tokens
+
+execute as @a[tag=!add3tokens2] run scoreboard players add @s Tokens 3
+execute as @a[tag=!add3tokens2] run scoreboard players add @s Points 0
+tag @a[tag=!add3tokens2] remove add3tokens
+execute as @a[tag=!add3tokens2] run tag @s add add3tokens2
+
+# After Death
 execute if score tick20hz obj matches 0 run tag @a[scores={Death=1..}] remove empoweredArcher
 execute if score tick20hz obj matches 0 run scoreboard players set @a[scores={Death=1..}] totalArrows 0
 
@@ -24,11 +31,6 @@ execute if score tick60hz obj matches 0 at @e[type=marker,tag=lobby] as @a[dista
 execute at @e[type=marker,tag=lobby] as @a[scores={yPos=..2},distance=..50] run function system:lobby/yleveltp
 execute as @e[type=marker,tag=classRemove] at @s as @a[distance=..5,scores={SelectedClass=1..}] run function system:lobby/removeclass
 execute as @e[type=marker,tag=lobby] at @s as @a[distance=..1,gamemode=adventure] run function system:warps/totem_of_weakness
-
-# map
-execute if score .tower1 obj matches 0.. as @e[type=marker,tag=tower1] run function system:map_func/tower1func
-execute if score .tower2 obj matches 0.. as @e[type=marker,tag=tower2] run function system:map_func/tower2func
-execute if score .tower3 obj matches 0.. as @e[type=marker,tag=tower3] run function system:map_func/tower3func
 
 # fall of map
 execute as @e[type=marker,tag=playground] at @s as @a[distance=..150,gamemode=adventure] store result score @s yPos run data get entity @s Pos[1]
@@ -67,6 +69,7 @@ execute as @a[nbt=!{foodLevel:20}] run function system:saturation/give
 
 # item setup
 execute if score tick120hz obj matches 0 as @a[tag=!itemsetup] run function system:items/setup
+
 # loop items
 execute if score tick20hz obj matches 0 as @e[scores={item1=1..}] as @s run function system:items/item1
 execute if score tick20hz obj matches 0 as @e[scores={item2=1..}] as @s run function system:items/item2
@@ -119,10 +122,13 @@ execute if score tick10hz obj matches 0 run scoreboard players reset @a[scores={
 
 execute as @e[type=arrow, nbt={inGround:1b}] run kill @s 
 
+
+# kill mob with tag = "killafter"
 scoreboard players add @e[tag=killafter] obj 1
 execute as @e[scores={obj=420..},tag=killafter] at @s run tp @s ~ ~-100 ~
 kill @e[scores={obj=420..},tag=killafter] 
 
-execute if score tick60hz obj matches 0 run scoreboard players add @a slowHealing 0
-execute if score tick60hz obj matches 0 run scoreboard players add @a mediumHealing 0
-execute if score tick60hz obj matches 0 run scoreboard players add @a healing 0
+execute if score tick120hz obj matches 0 run scoreboard players add @a slowHealing 0
+execute if score tick120hz obj matches 0 run scoreboard players add @a mediumHealing 0
+execute if score tick120hz obj matches 0 run scoreboard players add @a healing 0
+

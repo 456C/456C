@@ -11,12 +11,14 @@ execute as @s[scores={trigger=1..99}, team=Solo] run function system:sign/failur
 execute as @s[scores={trigger=1}, team=!Solo] run function system:sign/prompt/berserker
 execute as @s[scores={trigger=2}, team=!Solo] run function system:sign/prompt/monk
 execute as @s[scores={trigger=3}, team=!Solo] run function system:sign/prompt/archer
+execute as @s[scores={trigger=3}, team=!Solo] run function system:sign/prompt/mage
 
 # Class Buy 400..499
 
 execute as @s[scores={trigger=400}, team=!Solo] at @s if entity @e[tag=lobby, distance=..15] run function system:sign/perform_purchase/berserker
 execute as @s[scores={trigger=401}, team=!Solo] at @s if entity @e[tag=lobby, distance=..15] run function system:sign/perform_purchase/monk
 execute as @s[scores={trigger=402}, team=!Solo] at @s if entity @e[tag=lobby, distance=..15] run function system:sign/perform_purchase/archer
+execute as @s[scores={trigger=403}, team=!Solo] at @s if entity @e[tag=lobby, distance=..15] run function system:sign/perform_purchase/mage
 
 # Other Triggers <Value>
 

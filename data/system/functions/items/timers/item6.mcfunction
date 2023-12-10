@@ -18,6 +18,16 @@ execute as @s[scores={item6=16}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"mine
 execute as @s[scores={item6=17}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 17 levels
 execute as @s[scores={item6=18}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 18 levels
 execute as @s[scores={item6=19}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 19 levels
+execute as @s[scores={item6=20}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 20 levels
+execute as @s[scores={item6=21}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 21 levels
+execute as @s[scores={item6=22}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 23 levels
+execute as @s[scores={item6=23}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 23 levels
+execute as @s[scores={item6=24}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 24 levels
+execute as @s[scores={item6=25}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 25 levels
+execute as @s[scores={item6=26}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 26 levels
+execute as @s[scores={item6=27}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 27 levels
+execute as @s[scores={item6=28}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 28 levels
+execute as @s[scores={item6=29}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 29 levels
 execute as @s[scores={item6=30}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 30 levels
 execute as @s[scores={item6=31}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 31 levels
 execute as @s[scores={item6=32}, nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 33 levels
