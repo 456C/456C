@@ -1,11 +1,13 @@
 
+# dragon heart
+
 # success
 
 execute as @s[scores={item1=0}] run scoreboard players set @s healing 16
-execute as @s[scores={item1=0}] run scoreboard players set @s mediumHealing 26
-execute as @s[scores={item1=0}] run effect give @s slowness 12 0 false
-execute as @s[scores={item1=0}] run effect give @s resistance 3 1 false
-execute as @s[scores={item1=0}] run effect give @s strength 1 0 false
+execute as @s[scores={item1=0}] run scoreboard players set @s mediumHealing 8
+# execute as @s[scores={item1=0}] run effect give @s slowness 12 0 false
+execute as @s[scores={item1=0}] run effect give @s resistance 6 1 false
+execute as @s[scores={item1=0}] run effect give @s strength 6 0 false
 execute as @s[scores={item1=0}] at @s run playsound item.bottle.fill_dragonbreath master @a[distance=..20] ~ ~ ~ 0.3 1.8
 execute as @s[scores={item1=0}] at @s run playsound entity.evoker.cast_spell master @a[distance=..20] ~ ~ ~ 20 1 
 

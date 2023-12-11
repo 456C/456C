@@ -22,4 +22,4 @@ execute at @a[team=!Orange] run kill @e[tag=orange2t, distance = ..2]
 
 execute as @s[scores={obj=200..}, tag=talisman] run effect give @s glowing 3 0 true
 
-kill @e[scores={obj=600..}, tag=talisman]
+kill @e[scores={obj=400..}, tag=talisman]

@@ -5,6 +5,10 @@ function system:right_click
 schedule function system:clocks/main 1t replace
 execute as @e[type=item, nbt=!{Item:{ tag:{special:1b}}}] run kill @s
 
+# player left and joined, leave server
+
+execute as @a[scores={leaveGame=1..}] run function system:joining_logic/serverleave
+
 # New Players Setup
 execute as @a[tag=!NotNew] run team join Solo @s
 execute as @a[tag=!NotNew] run tag @s add NotNew 
@@ -30,7 +34,7 @@ execute at @e[type=marker,tag=lobby] as @a[distance=..50,gamemode=adventure] sto
 execute if score tick60hz obj matches 0 at @e[type=marker,tag=lobby] as @a[distance=..50] run function system:lobby/effects
 execute at @e[type=marker,tag=lobby] as @a[scores={yPos=..2},distance=..50] run function system:lobby/yleveltp
 execute as @e[type=marker,tag=classRemove] at @s as @a[distance=..5,scores={SelectedClass=1..}] run function system:lobby/removeclass
-execute as @e[type=marker,tag=lobby] at @s as @a[distance=..1,gamemode=adventure] run function system:warps/totem_of_weakness
+execute as @e[type=marker,tag=lobby] at @s as @a[distance=..1,gamemode=adventure] run function system:warps/playground
 
 # fall of map
 execute as @e[type=marker,tag=playground] at @s as @a[distance=..150,gamemode=adventure] store result score @s yPos run data get entity @s Pos[1]
@@ -63,6 +67,14 @@ execute if score tick10hz obj matches 1 as @e[scores={mediumHealing=1..}] run fu
 execute if score tick10hz obj matches 2 as @e run effect clear @s regeneration
 execute if score tick20hz obj matches 1 as @e[scores={slowHealing=1..}] run function system:healing/20hz
 execute if score tick20hz obj matches 2 as @e run effect clear @s regeneration
+
+execute if score tick120hz obj matches 0 run scoreboard players set @a[scores={slowHealing=..-1}] slowHealing 0
+execute if score tick120hz obj matches 0 run scoreboard players set @a[scores={mediumHealing=..-1}] mediumHealing 0
+execute if score tick120hz obj matches 0 run scoreboard players set @a[scores={healing=..-1}] healing 0
+execute if score tick120hz obj matches 0 run scoreboard players add @a slowHealing 0
+execute if score tick120hz obj matches 0 run scoreboard players add @a mediumHealing 0
+execute if score tick120hz obj matches 0 run scoreboard players add @a healing 0
+
 
 # remove
 execute as @a[nbt=!{foodLevel:20}] run function system:saturation/give 
@@ -118,9 +130,10 @@ execute if score tick60hz obj matches 0 as @a[scores={villager=1..}] run scorebo
 # reset sneak time
 execute if score tick10hz obj matches 0 run scoreboard players reset @a[scores={isCrouching=1..}] isCrouching
 
-# kill in ground arrows
+# arrow universal functions
 
-execute as @e[type=arrow, nbt={inGround:1b}] run kill @s 
+execute as @e[type=arrow,tag=!customArrow] run data merge entity @s {PierceLevel:1b, life: 1050, pickup: 0b}
+tag @e[type=arrow] add customArrow
 
 
 # kill mob with tag = "killafter"
@@ -128,7 +141,11 @@ scoreboard players add @e[tag=killafter] obj 1
 execute as @e[scores={obj=420..},tag=killafter] at @s run tp @s ~ ~-100 ~
 kill @e[scores={obj=420..},tag=killafter] 
 
-execute if score tick120hz obj matches 0 run scoreboard players add @a slowHealing 0
-execute if score tick120hz obj matches 0 run scoreboard players add @a mediumHealing 0
-execute if score tick120hz obj matches 0 run scoreboard players add @a healing 0
+# random
+
+execute as @e[scores={damageTakenFx=1..}] at @s run function system:damage_trigger/main
+
+execute if predicate system:random0000001 as @a[limit=1,sort=random] at @s run summon lightning_bolt ~ ~ ~
+
+
 
