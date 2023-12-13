@@ -1,3 +1,6 @@
+
+# knowledge
+
 # success
 
 execute as @s[scores={item4=0},team=Solo] at @s run effect give @e[distance=..100, type=!pig] glowing 7 0 true 

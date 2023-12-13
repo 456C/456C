@@ -145,7 +145,10 @@ kill @e[scores={obj=420..},tag=killafter]
 
 execute as @e[scores={damageTakenFx=1..}] at @s run function system:damage_trigger/main
 
-execute if predicate system:random0000001 as @a[limit=1,sort=random] at @s run summon lightning_bolt ~ ~ ~
+execute if predicate system:fast as @a[limit=1,sort=random] at @s run say fast
+
+execute if predicate system:regular as @a[limit=1,sort=random] at @s run say regular
+
 
 
 

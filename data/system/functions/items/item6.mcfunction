@@ -1,3 +1,6 @@
+
+# green tea
+
 # success
 
 scoreboard players add @s[scores={item6=0}] slowHealing 15

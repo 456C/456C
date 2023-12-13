@@ -1,3 +1,6 @@
+
+# cursed talisman
+
 # success
 
 execute as @s[scores={item2=0}] at @s run particle cloud ~ ~ ~ 0.01 0 0.01 0 10 force
@@ -6,6 +9,8 @@ execute as @s[scores={item2=0},team=Teal] at @s run summon armor_stand ~ ~2 ~ {I
 execute as @s[scores={item2=0},team=Lime] at @s run summon armor_stand ~ ~2 ~ {Invulnerable:1b,PersistenceRequired:1b,NoBasePlate:1b,ShowArms:1b,Small:1b,ArmorItems:[{id:"leather_boots",Count:1b,tag:{display:{color:1027338}}},{id:"leather_leggings",Count:1b,tag:{display:{color:6129233}}},{id:"leather_chestplate",Count:1b,tag:{display:{color:10416268}}},{id:"piglin_head",Count:1b}],HandItems:[{id:"stick",Count:1b},{id:"stick",Count:1b}],Tags:["talismanrotate","talisman","lime2t"],DisabledSlots:4144959,Pose:{Head:[331f,0f,23f],LeftLeg:[0f,0f,355f],RightLeg:[0f,0f,8f],LeftArm:[0f,346f,0f],RightArm:[0f,7f,0f]}}
 execute as @s[scores={item2=0},team=Magenta] at @s run summon armor_stand ~ ~2 ~ {Invulnerable:1b,PersistenceRequired:1b,NoBasePlate:1b,ShowArms:1b,Small:1b,ArmorItems:[{id:"leather_boots",Count:1b,tag:{display:{color:11340447}}},{id:"leather_leggings",Count:1b,tag:{display:{color:8472174}}},{id:"leather_chestplate",Count:1b,tag:{display:{color:14850517}}},{id:"piglin_head",Count:1b}],HandItems:[{id:"stick",Count:1b},{id:"stick",Count:1b}],Tags:["talismanrotate","talisman","magenta2t"],DisabledSlots:4144959,Pose:{Head:[331f,0f,23f],LeftLeg:[0f,0f,355f],RightLeg:[0f,0f,8f],LeftArm:[0f,346f,0f],RightArm:[0f,7f,0f]}}
 execute as @s[scores={item2=0},team=Orange] at @s run summon armor_stand ~ ~2 ~ {Invulnerable:1b,PersistenceRequired:1b,NoBasePlate:1b,ShowArms:1b,Small:1b,ArmorItems:[{id:"leather_boots",Count:1b,tag:{display:{color:11362570}}},{id:"leather_leggings",Count:1b,tag:{display:{color:8281654}}},{id:"leather_chestplate",Count:1b,tag:{display:{color:14991763}}},{id:"piglin_head",Count:1b}],HandItems:[{id:"stick",Count:1b},{id:"stick",Count:1b}],Tags:["talismanrotate","talisman","orange2t"],DisabledSlots:4144959,Pose:{Head:[331f,0f,23f],LeftLeg:[0f,0f,355f],RightLeg:[0f,0f,8f],LeftArm:[0f,346f,0f],RightArm:[0f,7f,0f]}}
+
+
 execute as @s[scores={item2=0}] at @s run tp @e[tag=talismanrotate] ~ ~ ~ ~180 ~
 execute as @s[scores={item2=0}] run tag @e[tag=talismanrotate] remove talismanrotate
 
