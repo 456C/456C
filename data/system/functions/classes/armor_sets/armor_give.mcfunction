@@ -1,6 +1,6 @@
 
 
-# berserker
+# berserker 1
 
 execute as @s[scores={SelectedClass=1},team=Solo] run item replace entity @s armor.chest with iron_chestplate{Trim:{pattern:shaper,material:iron},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
 execute as @s[scores={SelectedClass=1},team=Teal] run item replace entity @s armor.chest with iron_chestplate{Trim:{pattern:shaper,material:diamond},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:6}
@@ -18,7 +18,7 @@ execute as @s[scores={SelectedClass=1},team=Magenta] run item replace entity @s 
 execute as @s[scores={SelectedClass=1},team=Lime] run item replace entity @s armor.feet with leather_boots{Trim:{pattern:host,material:emerald},display:{color:11134878},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:134}
 execute as @s[scores={SelectedClass=1},team=Orange] run item replace entity @s armor.feet with leather_boots{Trim:{pattern:host,material:gold},display:{color:14070404},Unbreakable:1,EntityTag:{Invisible:1b},HideFlags:134}
 
-# monk
+# monk 2
 
 execute as @s[scores={SelectedClass=2},team=Solo] run item replace entity @s armor.chest with leather_chestplate{Trim:{pattern:vex,material:iron},display:{color:8417114},Unbreakable:1,HideFlags:6}
 execute as @s[scores={SelectedClass=2},team=Teal] run item replace entity @s armor.chest with leather_chestplate{Trim:{pattern:vex,material:diamond},display:{color:8417114},Unbreakable:1,HideFlags:6}
@@ -32,7 +32,7 @@ execute as @s[scores={SelectedClass=2}, team=Magenta] run item replace entity @s
 execute as @s[scores={SelectedClass=2}, team=Orange] run item replace entity @s armor.legs with leather_leggings{Trim:{pattern:raiser,material:orange},display:{color:12498851},Unbreakable:1,HideFlags:25}
 execute as @s[scores={SelectedClass=2}, team=Solo] run item replace entity @s armor.legs with leather_leggings{Trim:{pattern:raiser,material:quartz},display:{color:12498851},Unbreakable:1,HideFlags:25}
 
-# archer
+# archer 3
 
 execute as @s[scores={SelectedClass=3},team=Solo] run item replace entity @s armor.chest with iron_chestplate{Trim:{pattern:tide,material:quartz},Unbreakable:1,HideFlags:63}
 execute as @s[scores={SelectedClass=3},team=Teal] run item replace entity @s armor.chest with iron_chestplate{Trim:{pattern:tide,material:diamond},Unbreakable:1,HideFlags:63}
@@ -44,4 +44,17 @@ execute as @s[scores={SelectedClass=3}] run item replace entity @s armor.legs wi
 
 execute as @s[scores={SelectedClass=3}] run item replace entity @s armor.feet with chainmail_boots{display:{color:6384472},Unbreakable:1,HideFlags:63}
 
-# mage
+# mage 4
+
+execute as @s[scores={SelectedClass=4}] run item replace entity @s armor.head with minecraft:gray_stained_glass
+
+execute as @s[scores={SelectedClass=4},team=Solo] run item replace entity @s armor.chest with leather_chestplate{Trim:{pattern:dune,material:coal},display:{color:16383998},Unbreakable:1,HideFlags:63}
+execute as @s[scores={SelectedClass=4},team=Teal] run item replace entity @s armor.chest with leather_chestplate{Trim:{pattern:dune,material:diamond},display:{color:16383998},Unbreakable:1,HideFlags:63}
+execute as @s[scores={SelectedClass=4},team=Lime] run item replace entity @s armor.chest with leather_chestplate{Trim:{pattern:dune,material:emerald},display:{color:16383998},Unbreakable:1,HideFlags:63}
+execute as @s[scores={SelectedClass=4},team=Magenta] run item replace entity @s armor.chest with leather_chestplate{Trim:{pattern:dune,material:amethyst},display:{color:16383998},Unbreakable:1,HideFlags:63}
+execute as @s[scores={SelectedClass=4},team=Orange] run item replace entity @s armor.chest with leather_chestplate{Trim:{pattern:dune,material:gold},display:{color:16383998},Unbreakable:1,HideFlags:63}
+
+execute as @s[scores={SelectedClass=4}] run item replace entity @s armor.legs with leather_leggings{display:{color:11316393},Unbreakable:1b,HideFlags:63}
+
+execute as @s[scores={SelectedClass=4}] run item replace entity @s armor.feet with leather_boots{display:{color:6579300},Unbreakable:1b,HideFlags:63}
+

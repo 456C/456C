@@ -20,5 +20,5 @@ execute as @s[scores={right_click=1..,item3=1..}] run playsound block.note_block
 
 # loop
 
-execute as @s[scores={item3=1}] at @s run playsound block.note_block.bell master @s ~ ~ ~ 20 1.6
+execute as @s[scores={item3=1,right_click=0}, nbt=!{SelectedItem:{ tag:{woodenrake:1b}, id:"minecraft:wooden_hoe"}}] at @s run playsound block.note_block.bell master @s ~ ~ ~ 0.3 0.7
 execute unless entity @s[scores={right_click=1..}] run scoreboard players remove @s[scores={item3=1..}] item3 1

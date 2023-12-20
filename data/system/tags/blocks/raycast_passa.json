@@ -5,7 +5,7 @@
     "minecraft:cave_air",
     "minecraft:water",
     "minecraft:lava",
-    "minecraft:grass",
+    "minecraft:short_grass",
  "#minecraft:small_flowers",
  "#minecraft:tall_flowers",
  "#minecraft:small_dripleaf_placeable",
@@ -37,6 +37,7 @@
     "minecraft:torch",
     "minecraft:soul_torch",
     "minecraft:redstone_torch",
-    "minecraft:glow_lichen"
+    "minecraft:glow_lichen",
+    "minecraft:light"
     ]
 }

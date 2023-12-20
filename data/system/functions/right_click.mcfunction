@@ -14,8 +14,8 @@ execute as @a[scores={right_click=1..}, nbt={SelectedItem:{ tag:{spelltome:1b}, 
 
 # Reset the scoreboard
 
-scoreboard players reset @a[scores={shootBow=1..}] shootBow
-scoreboard players reset @a[scores={right_click=1..}] right_click
+scoreboard players set @a[scores={shootBow=1..}] shootBow 0
+scoreboard players set @a[scores={right_click=1..}] right_click 0
 
 # loop items
 

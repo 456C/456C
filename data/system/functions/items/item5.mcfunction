@@ -23,5 +23,5 @@ scoreboard players set @s[scores={item5=0}] item5 3
 
 # loop
 
-execute as @s[scores={item5=1}] at @s run playsound block.note_block.bell master @s ~ ~ ~ 20 1.6
+execute as @s[scores={item5=1,right_click=0}, nbt=!{SelectedItem:{ tag:{nightveil:1b}, id:"minecraft:bow"}}] at @s run playsound block.note_block.bell master @s ~ ~ ~ 0.3 0.7
 execute unless entity @s[scores={shootBow=1..}] run scoreboard players remove @s[scores={item5=1..}] item5 1

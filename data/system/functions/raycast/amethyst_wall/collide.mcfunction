@@ -1,9 +1,9 @@
-summon creeper ~ ~ ~ {Fuse:0,Silent:1b,ExplosionRadius:8b}
+summon armor_stand ~ ~ ~ {Invisible:1b,NoGravity:1b,Tags:["amethystwall"],Marker:1b}
 
-execute as @e[tag=spread] at @s run spreadplayers ~ ~ 2 4 false @s
+execute as @e[tag=raycasting] run tp @e[tag=amethystwall] ~ ~ ~ ~ 0
+execute positioned ~ ~ ~ run playsound entity.player.hurt_freeze master @a[distance=..10] ~ ~ ~ 1 0.1 1
 
-
-scoreboard players set .distance raycastDistance 250
+scoreboard players set .distance raycastDistance 20
 
 
 

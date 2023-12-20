@@ -27,5 +27,5 @@ execute as @s[scores={right_click=1..,item2=1..}] run playsound block.note_block
 
 # loop
 
-execute as @s[scores={item2=1}] at @s run playsound block.note_block.bell master @s ~ ~ ~ 20 1.6
+execute as @s[scores={item2=1,right_click=0},nbt=!{SelectedItem:{ tag:{cursedtalisman:1b}, id:"minecraft:piglin_head"}}] at @s run playsound block.note_block.bell master @s ~ ~ ~ 0.3 0.7
 execute unless entity @s[scores={right_click=1..}] run scoreboard players remove @s[scores={item2=1..}] item2 1

@@ -30,5 +30,5 @@ execute as @s[scores={right_click=1..,item4=1..}] run playsound block.note_block
 
 # loop
 
-execute as @s[scores={item4=1}] at @s run playsound block.note_block.bell master @s ~ ~ ~ 20 1.6
+execute as @s[scores={item4=1,right_click=0}, nbt=!{SelectedItem:{ tag:{knowledge:1b}, id:"minecraft:creeper_banner_pattern"}}] at @s run playsound block.note_block.bell master @s ~ ~ ~ 0.3 0.7
 execute unless entity @s[scores={right_click=1..}] run scoreboard players remove @s[scores={item4=1..}] item4 1

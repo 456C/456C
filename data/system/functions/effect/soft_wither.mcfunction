@@ -1,0 +1,1 @@
+effect give @s wither 6 1 false

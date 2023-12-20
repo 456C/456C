@@ -34,19 +34,12 @@ execute at @e[type=marker,tag=lobby] as @a[distance=..50,gamemode=adventure] sto
 execute if score tick60hz obj matches 0 at @e[type=marker,tag=lobby] as @a[distance=..50] run function system:lobby/effects
 execute at @e[type=marker,tag=lobby] as @a[scores={yPos=..2},distance=..50] run function system:lobby/yleveltp
 execute as @e[type=marker,tag=classRemove] at @s as @a[distance=..5,scores={SelectedClass=1..}] run function system:lobby/removeclass
-execute as @e[type=marker,tag=lobby] at @s as @a[distance=..1,gamemode=adventure] run function system:warps/playground
+execute as @e[type=marker,tag=lobby] at @s as @a[distance=..2] run function system:warps/playground
+execute if score tick60hz obj matches 0 at @e[type=marker,tag=lobby] run function system:items/item_util/lobby_reset
 
 # fall of map
 execute as @e[type=marker,tag=playground] at @s as @a[distance=..150,gamemode=adventure] store result score @s yPos run data get entity @s Pos[1]
 execute as @e[type=marker,tag=playground] at @s as @a[scores={yPos=..-5}] run function system:lobby/ylevelmap
-
-# team tower
-execute if score tick120hz obj matches 1 as @e[type=marker,tag=tower] at @s run function system:towerfx/main
-
-execute as @a[tag=captured] run function system:map_func/towerteam 
-
-# capture2
-execute as @e[type=area_effect_cloud,tag=capture] run function system:capture/cap_main
 
 # classes 
 execute if score tick60hz obj matches 0 as @e[type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] run kill @s
@@ -89,6 +82,9 @@ execute if score tick20hz obj matches 0 as @e[scores={item3=1..}] as @s run func
 execute if score tick20hz obj matches 0 as @e[scores={item4=1..}] as @s run function system:items/item4
 execute if score tick20hz obj matches 0 as @e[scores={item5=1..}] as @s run function system:items/item5
 execute if score tick20hz obj matches 0 as @e[scores={item6=1..}] as @s run function system:items/item6
+execute if score tick20hz obj matches 0 as @e[scores={item7=1..}] as @s run function system:items/item7
+execute if score tick20hz obj matches 0 as @e[scores={item8=1..}] as @s run function system:items/item8
+execute if score tick20hz obj matches 0 as @e[scores={item9=1..}] as @s run function system:items/item9
 
 
 # item cooldowns
@@ -110,11 +106,22 @@ execute if score tick60hz obj matches 0 as @a[scores={item6=1..},nbt=!{SelectedI
 execute as @a[nbt={SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run function system:items/timers/item6
 execute if score tick60hz obj matches 0 as @a[scores={item6=1..},nbt=!{SelectedItem:{ tag:{greentea:1b}, id:"minecraft:potion"}}] run xp set @s 0 levels
 
+execute as @a[nbt={SelectedItem:{ tag:{prismaticaurora:1b}, id:"minecraft:golden_shovel"}}] run function system:items/timers/item7
+execute if score tick60hz obj matches 0 as @a[scores={item7=1..},nbt=!{SelectedItem:{ tag:{prismaticaurora:1b}, id:"minecraft:golden_shovel"}}] run xp set @s 0 levels
+
+execute as @a[nbt={SelectedItem:{ tag:{magicrune:1b}, id:"minecraft:wayfinder_armor_trim_smithing_template"}}] run function system:items/timers/item8
+execute if score tick60hz obj matches 0 as @a[scores={item8=1..},nbt=!{SelectedItem:{ tag:{magicrune:1b}, id:"minecraft:wayfinder_armor_trim_smithing_template"}}] run xp set @s 0 levels
+
+execute as @a[nbt={SelectedItem:{ tag:{spelltome:1b}, id:"minecraft:book"}}] run function system:items/timers/item9
+execute if score tick60hz obj matches 0 as @a[scores={item9=1..},nbt=!{SelectedItem:{ tag:{spelltome:1b}, id:"minecraft:book"}}] run xp set @s 0 levels
+
 # spawn mobs
 execute if score tick120hz obj matches 0 as @e[tag=summon, type=marker] run function system:mob_waves/summon
 
 # item util
 execute as @e[tag=talisman] run function system:items/item_util/item2
+execute if score tick3hz obj matches 0 as @e[tag=amethystwall] run function system:items/item_util/amethyst_wall
+execute if score tick3hz obj matches 0 as @e[tag=wallmarker] run function system:items/item_util/wallmarker
 
 # detect triggers
 execute if score tick3hz obj matches 0 as @e[tag=marco] at @s run scoreboard players enable @a[distance=..10] trigger
@@ -145,9 +152,8 @@ kill @e[scores={obj=420..},tag=killafter]
 
 execute as @e[scores={damageTakenFx=1..}] at @s run function system:damage_trigger/main
 
-execute if predicate system:fast as @a[limit=1,sort=random] at @s run say fast
-
-execute if predicate system:regular as @a[limit=1,sort=random] at @s run say regular
+# execute if predicate system:fast as @a[limit=1,sort=random] at @s run say fast
+# execute if predicate system:regular as @a[limit=1,sort=random] at @s run say regular
 
 
 

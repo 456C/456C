@@ -11,7 +11,7 @@ execute as @s[scores={trigger=1..99}, team=Solo] run function system:sign/failur
 execute as @s[scores={trigger=1}, team=!Solo] run function system:sign/prompt/berserker
 execute as @s[scores={trigger=2}, team=!Solo] run function system:sign/prompt/monk
 execute as @s[scores={trigger=3}, team=!Solo] run function system:sign/prompt/archer
-execute as @s[scores={trigger=3}, team=!Solo] run function system:sign/prompt/mage
+execute as @s[scores={trigger=4}, team=!Solo] run function system:sign/prompt/mage
 
 # Class Buy 400..499
 
