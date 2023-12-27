@@ -5,7 +5,7 @@ execute if score @s Death matches 1 run effect give @s darkness 6 0 true
 execute if score @s Death matches 1 run effect give @s blindness 6 0 true
 execute if score @s Death matches 1 run title @s times 20 40 20
 execute if score @s Death matches 1 run title @s subtitle {"text":"You will respawn soon"}
-execute if score @s Death matches 1 run title @s title {"text":"YOU DIED","bold":true,"color":"red"}
+execute if score @s Death matches 1 run title @s title {"text":"YOU DIED","bold":true,"color":"dark_gray"}
 execute if score @s Death matches 5 run tp @s 501 500 468 -73 62
 execute if score @s Death matches 1 run clear @s carrot_on_a_stick
 execute if score @s Death matches 1 run give @s[scores={SelectedClass=3,item5=0}] arrow 1

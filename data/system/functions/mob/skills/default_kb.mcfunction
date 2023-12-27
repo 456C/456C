@@ -1,0 +1,1 @@
+attribute @s generic.attack_knockback base set 0

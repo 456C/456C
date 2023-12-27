@@ -1,5 +1,6 @@
 execute as @s run function system:classes/clear
 
+execute as @s[scores={class=1}] run scoreboard players set @s item6 0
 execute as @s[scores={class=1}] run function system:classes/armor_sets/armor_give
 
 execute as @s[scores={class=1}] run item replace entity @s hotbar.0 with iron_sword{Unbreakable:1,frostbite:1b,tags:1b,EntityTag:{Invisible:1b},display:{Name:'[{"text":"Frostbite","italic":false,"color":"#99ccff"}]',Lore:['[{"text":"With the proper wielder, this blade","italic":false,"color":"gray"}]','[{"text":"has unstoppable potential; after","italic":false,"color":"gray"}]','[{"text":"inflicting","italic":false,"color":"gray"},{"text":" ","color":"dark_purple"},{"text":"multiple devastating","color":"white"}]','[{"text":"blows","italic":false,"color":"white"},{"text":", it will definitely ","color":"gray"},{"text":"cripple","color":"dark_aqua"},{"text":"","color":"dark_purple"}]','[{"text":"the","italic":false,"color":"gray"},{"text":" ","color":"#ccccff"},{"text":"enemy","color":"#ffcccc"},{"text":"."}]']},HideFlags:126} 1

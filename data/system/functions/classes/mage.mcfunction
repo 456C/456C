@@ -1,5 +1,6 @@
 execute as @s run function system:classes/clear
 
+execute as @s[scores={class=4}] run scoreboard players set @s item6 0
 execute as @s[scores={class=4}] run function system:classes/armor_sets/armor_give
 scoreboard players add @s[scores={class=4}] SelectedSpell 0
 tag @s remove activatedHeals 

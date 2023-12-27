@@ -11,11 +11,15 @@ execute as @a[scores={item6=0},nbt={active_effects:[{id:"minecraft:water_breathi
 execute as @a[scores={right_click=1..}, nbt={SelectedItem:{ tag:{prismaticaurora:1b}, id:"minecraft:golden_shovel"}}] at @s run function system:items/item7
 execute as @a[scores={right_click=1..}, nbt={SelectedItem:{ tag:{magicrune:1b}, id:"minecraft:wayfinder_armor_trim_smithing_template"}}] at @s run function system:items/item8
 execute as @a[scores={right_click=1..}, nbt={SelectedItem:{ tag:{spelltome:1b}, id:"minecraft:book"}}] at @s run function system:items/item9
+execute as @a[scores={right_click=1..}, nbt={SelectedItem:{ tag:{groundslam:1b}, id:"minecraft:netherite_upgrade_smithing_template"}}] at @s run function system:items/item10
+
 
 # Reset the scoreboard
 
 scoreboard players set @a[scores={shootBow=1..}] shootBow 0
 scoreboard players set @a[scores={right_click=1..}] right_click 0
 
-# loop items
+# mobs
+
+
 

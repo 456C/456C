@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "values": [
+      "system:init",
+      "delta:internal/technical/load",
+      "random:private/load"
+    ]
+}

@@ -18,7 +18,7 @@ scoreboard players set @s[scores={item9=0}] item9 1
 
 # failure
 
-execute as @s[scores={right_click=1..,item9=1..}] run playsound block.note_block.bass master @s ~ ~ ~ 100 0.1
+# execute as @s[scores={right_click=1..,item9=1..}] run playsound block.note_block.bass master @s ~ ~ ~ 100 0.1
 
 # loop
 

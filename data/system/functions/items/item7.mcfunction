@@ -21,7 +21,7 @@ execute as @s[team=Magenta,tag=!rune,scores={item7=0, SelectedSpell=0}] run func
 execute as @s[team=Orange,tag=!rune,scores={item7=0, SelectedSpell=0}] run function system:raycast/explosion/orange/start
 
 execute as @s[tag=!rune,scores={item7=0, SelectedSpell=0}] run playsound block.enchantment_table.use master @a[distance=..20] ~ ~ ~ 0.5 2 1
-scoreboard players set @s[tag=!rune,scores={item7=0, SelectedSpell=0}] item7 3
+scoreboard players set @s[tag=!rune,scores={item7=0, SelectedSpell=0}] item7 5
 
 # no rune ability 2 amethyst wall
 
@@ -39,7 +39,7 @@ scoreboard players set @s[tag=rune,scores={item7=0, SelectedSpell=1}] item7 9
 
 # failure
 
-execute as @s[scores={right_click=1..,item7=1..}] run playsound block.note_block.bass master @s ~ ~ ~ 100 0.1
+execute as @s[scores={right_click=1..,item7=1..},nbt=!{SelectedItem:{ tag:{prismaticaurora:1b}}}] run playsound block.note_block.bass master @s ~ ~ ~ 100 0.1
 
 # loop
 

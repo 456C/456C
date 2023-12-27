@@ -2,7 +2,7 @@ execute as @e[type=!#system:not_mob, tag=!raycasting, dx=0] positioned ~-0.01 ~-
 
 scoreboard players add .distance raycastDistance 1
 
-particle campfire_signal_smoke ~ ~ ~ 0 0 0 0 1 force 
+particle sculk_soul ~ ~ ~ 0 0 0 0 1 force 
 
 execute if score .distance raycastDistance matches ..250 positioned ^ ^ ^0.5 rotated ~ ~0.05 unless block ~ ~ ~ #system:raycast_pass run function system:raycast/empowered_archer/collide
 

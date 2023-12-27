@@ -10,8 +10,13 @@ execute as @e[type=item, nbt=!{Item:{ tag:{special:1b}}}] run kill @s
 execute as @a[scores={leaveGame=1..}] run function system:joining_logic/serverleave
 
 # New Players Setup
-execute as @a[tag=!NotNew] run team join Solo @s
-execute as @a[tag=!NotNew] run tag @s add NotNew 
+
+tag @a remove NotNew
+execute as @a[tag=NotNew2] run attribute @s generic.max_health base set 14
+execute as @a[tag=NotNew2] run attribute @s generic.attack_speed base set 3.4
+execute as @a[tag=NotNew2] run attribute @s minecraft:generic.max_absorption base set 6
+execute as @a[tag=!NotNew2] run team join Solo @s
+execute as @a[tag=!NotNew2] run tag @s add NotNew2 
 
 execute as @a[tag=!add3tokens2] run scoreboard players add @s Tokens 3
 execute as @a[tag=!add3tokens2] run scoreboard players add @s Points 0
@@ -85,6 +90,7 @@ execute if score tick20hz obj matches 0 as @e[scores={item6=1..}] as @s run func
 execute if score tick20hz obj matches 0 as @e[scores={item7=1..}] as @s run function system:items/item7
 execute if score tick20hz obj matches 0 as @e[scores={item8=1..}] as @s run function system:items/item8
 execute if score tick20hz obj matches 0 as @e[scores={item9=1..}] as @s run function system:items/item9
+execute if score tick20hz obj matches 0 as @e[scores={item10=1..}] as @s run function system:items/item10
 
 
 # item cooldowns
@@ -115,6 +121,9 @@ execute if score tick60hz obj matches 0 as @a[scores={item8=1..},nbt=!{SelectedI
 execute as @a[nbt={SelectedItem:{ tag:{spelltome:1b}, id:"minecraft:book"}}] run function system:items/timers/item9
 execute if score tick60hz obj matches 0 as @a[scores={item9=1..},nbt=!{SelectedItem:{ tag:{spelltome:1b}, id:"minecraft:book"}}] run xp set @s 0 levels
 
+execute as @e[nbt={SelectedItem:{ tag:{groundslam:1b}, id:"minecraft:netherite_upgrade_smithing_template"}}] run function system:items/timers/item10
+execute if score tick60hz obj matches 0 as @e[scores={item10=1..},nbt=!{SelectedItem:{ tag:{groundslam:1b}, id:"minecraft:netherite_upgrade_smithing_template"}}] run xp set @s 0 levels
+
 # spawn mobs
 execute if score tick120hz obj matches 0 as @e[tag=summon, type=marker] run function system:mob_waves/summon
 
@@ -122,6 +131,7 @@ execute if score tick120hz obj matches 0 as @e[tag=summon, type=marker] run func
 execute as @e[tag=talisman] run function system:items/item_util/item2
 execute if score tick3hz obj matches 0 as @e[tag=amethystwall] run function system:items/item_util/amethyst_wall
 execute if score tick3hz obj matches 0 as @e[tag=wallmarker] run function system:items/item_util/wallmarker
+execute if score @e[limit=1,tag=groundslam] item10 matches 1.. as @e[scores={item10=1..},tag=groundslam] run function system:items/item_util/groundslam
 
 # detect triggers
 execute if score tick3hz obj matches 0 as @e[tag=marco] at @s run scoreboard players enable @a[distance=..10] trigger
@@ -143,14 +153,18 @@ execute as @e[type=arrow,tag=!customArrow] run data merge entity @s {PierceLevel
 tag @e[type=arrow] add customArrow
 
 
-# kill mob with tag = "killafter"
+# kill mob with tag "killafter"
 scoreboard players add @e[tag=killafter] obj 1
 execute as @e[scores={obj=420..},tag=killafter] at @s run tp @s ~ ~-100 ~
 kill @e[scores={obj=420..},tag=killafter] 
 
-# random
+# Other
 
 execute as @e[scores={damageTakenFx=1..}] at @s run function system:damage_trigger/main
+
+# Particles that run on-tick
+
+
 
 # execute if predicate system:fast as @a[limit=1,sort=random] at @s run say fast
 # execute if predicate system:regular as @a[limit=1,sort=random] at @s run say regular
