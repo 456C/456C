@@ -133,27 +133,27 @@ execute if score tick3hz obj matches 0 as @e[tag=amethystwall] run function syst
 execute if score tick3hz obj matches 0 as @e[tag=wallmarker] run function system:items/item_util/wallmarker
 execute if score @e[limit=1,tag=groundslam] item10 matches 1.. as @e[scores={item10=1..},tag=groundslam] run function system:items/item_util/groundslam
 
-# detect triggers
+# Trigger functionality
 execute if score tick3hz obj matches 0 as @e[tag=marco] at @s run scoreboard players enable @a[distance=..10] trigger
 execute if score tick60hz obj matches 59 as @e[tag=marco] at @s run scoreboard players reset @a[distance=10..] trigger
 execute if score tick3hz obj matches 0 as @e[tag=lobby] at @s run scoreboard players enable @a[distance=..14] trigger
 execute if score tick60hz obj matches 59 as @e[tag=lobby] at @s run scoreboard players reset @a[distance=14..] trigger
 execute as @a[scores={trigger=1..}] run function system:trigger
 
-# detect villager talk
+# Detect Villager interactions
 execute if score tick60hz obj matches 0 as @e[type=villager] at @s as @a[scores={villager=1..}] run function system:villager_interaction
 execute if score tick60hz obj matches 0 as @a[scores={villager=1..}] run scoreboard players reset @s villager
 
-# reset sneak time
+# Reset sneaktime objective
 execute if score tick10hz obj matches 0 run scoreboard players reset @a[scores={isCrouching=1..}] isCrouching
 
-# arrow universal functions
-
+# Arrow Functionality
+# Make arrows have a despawn duration and be able to pierce through targets that way they do not get stuck in one entity.
 execute as @e[type=arrow,tag=!customArrow] run data merge entity @s {PierceLevel:1b, life: 1050, pickup: 0b}
 tag @e[type=arrow] add customArrow
 
 
-# kill mob with tag "killafter"
+# kill mob with tag "killafter" after a 420 tick duration
 scoreboard players add @e[tag=killafter] obj 1
 execute as @e[scores={obj=420..},tag=killafter] at @s run tp @s ~ ~-100 ~
 kill @e[scores={obj=420..},tag=killafter] 
@@ -162,13 +162,9 @@ kill @e[scores={obj=420..},tag=killafter]
 
 execute as @e[scores={damageTakenFx=1..}] at @s run function system:damage_trigger/main
 
-# Particles that run on-tick
+# mob
 
 
-
-# execute if predicate system:fast as @a[limit=1,sort=random] at @s run say fast
-# execute if predicate system:regular as @a[limit=1,sort=random] at @s run say regular
-
-
-
+execute if score tick60hz obj matches 0 at @e[type=marker,tag=spawner] run function system:mob/spawner/perform
+execute if score tick60hz obj matches 0 at @e[type=marker,tag=spawner] run function system:mob/skills/perform
 

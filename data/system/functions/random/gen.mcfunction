@@ -1,0 +1,1 @@
+execute store result score $random obj run random value 1..100

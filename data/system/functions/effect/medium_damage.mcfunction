@@ -1,1 +1,1 @@
-damage @s 8 generic at ~ ~ ~ 
+damage @s 12 generic at ~ ~ ~ 

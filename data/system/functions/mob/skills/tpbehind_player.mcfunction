@@ -8,6 +8,5 @@ execute as @a[tag=nearestplayer] at @s run tp @e[tag=skill] ^ ^ ^-2
 
 
 
-
 tag @a remove nearestplayer
 tag @s remove skill
