@@ -11,12 +11,13 @@ execute as @a[scores={leaveGame=1..}] run function system:joining_logic/serverle
 
 # New Players Setup
 
+tag @a remove NotNew2
 tag @a remove NotNew
-execute as @a[tag=NotNew2] run attribute @s generic.max_health base set 14
-execute as @a[tag=NotNew2] run attribute @s generic.attack_speed base set 3.4
-execute as @a[tag=NotNew2] run attribute @s minecraft:generic.max_absorption base set 6
-execute as @a[tag=!NotNew2] run team join Solo @s
-execute as @a[tag=!NotNew2] run tag @s add NotNew2 
+execute as @a[tag=NotNew3] run attribute @s generic.max_health base set 14
+execute as @a[tag=NotNew3] run attribute @s generic.attack_speed base set 3.9
+execute as @a[tag=NotNew3] run attribute @s minecraft:generic.max_absorption base set 6
+execute as @a[tag=!NotNew3] run team join Solo @s
+execute as @a[tag=!NotNew3] run tag @s add NotNew3
 
 execute as @a[tag=!add3tokens2] run scoreboard players add @s Tokens 3
 execute as @a[tag=!add3tokens2] run scoreboard players add @s Points 0
@@ -39,7 +40,7 @@ execute at @e[type=marker,tag=lobby] as @a[distance=..50,gamemode=adventure] sto
 execute if score tick60hz obj matches 0 at @e[type=marker,tag=lobby] as @a[distance=..50] run function system:lobby/effects
 execute at @e[type=marker,tag=lobby] as @a[scores={yPos=..2},distance=..50] run function system:lobby/yleveltp
 execute as @e[type=marker,tag=classRemove] at @s as @a[distance=..5,scores={SelectedClass=1..}] run function system:lobby/removeclass
-execute as @e[type=marker,tag=lobby] at @s as @a[distance=..2] run function system:warps/playground
+execute as @e[type=marker,tag=lobby] at @s as @a[distance=..2] run function system:warps/mainmap
 execute if score tick60hz obj matches 0 at @e[type=marker,tag=lobby] run function system:items/item_util/lobby_reset
 
 # fall of map
@@ -165,6 +166,23 @@ execute as @e[scores={damageTakenFx=1..}] at @s run function system:damage_trigg
 # mob
 
 
-execute if score tick60hz obj matches 0 at @e[type=marker,tag=spawner] run function system:mob/spawner/perform
+execute if score tick120hz obj matches 0 at @e[type=marker,tag=spawner] run function system:mob/spawner/perform
 execute if score tick60hz obj matches 0 at @e[type=marker,tag=spawner] run function system:mob/skills/perform
 
+
+# mob leash 
+
+execute if score tick120hz obj matches 0 at @e[tag=floor1_hoglin_spawner] as @e[tag=floor1_hoglin,distance=40..] run tp @s @e[tag=floor1_hoglin_spawner,limit=1,sort=nearest] 
+
+
+execute if score tick60hz obj matches 0 at @e[tag=section] run particle end_rod ~ ~ ~ 4 4 4 0.001 1 force
+execute if score tick60hz obj matches 0 at @e[tag=section] run function system:section/fill
+execute at @e[type=marker,tag=section_map] as @a[distance=..250] run function system:section/capture
+execute if score tick120hz obj matches 0 run function system:section/perform_count
+
+
+# Marker for sections tags:
+#
+# section: assigns that the marker is a section
+# d_<color>: default origin section of a color
+# s_<color>: the team that has captured

@@ -15,7 +15,7 @@ execute as @s[tag=empoweredArcher, scores={item5=0}] run function system:raycast
 
 
 # cooldown 
-scoreboard players set @s[scores={item5=0}] item5 3
+scoreboard players set @s[scores={item5=0}] item5 2
 
 # failure
 

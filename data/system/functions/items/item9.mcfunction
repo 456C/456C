@@ -7,9 +7,9 @@ execute as @s[scores={item9=0}] at @s run scoreboard players add @s SelectedSpel
 execute as @s[scores={item9=0, SelectedSpell=3..}] at @s run scoreboard players set @s SelectedSpell 0
 execute as @s[scores={item9=0}] at @s run playsound item.book.page_turn master @s ~ ~ ~ 10 1 0.3
 
-execute as @s[scores={item9=0, SelectedSpell=0}] run title @a actionbar ["",{"text":"\"Infliction\"","color":"yellow"}]
-execute as @s[scores={item9=0, SelectedSpell=1}] run title @a actionbar ["",{"text":"\"Illusion\"","color":"yellow"}]
-execute as @s[scores={item9=0, SelectedSpell=2}] run title @a actionbar ["",{"text":"\"Flow\"","color":"yellow"}]
+execute as @s[scores={item9=0, SelectedSpell=0}] run title @s actionbar ["",{"text":"\"Infliction\"","color":"yellow"}]
+execute as @s[scores={item9=0, SelectedSpell=1}] run title @s actionbar ["",{"text":"\"Illusion\"","color":"yellow"}]
+execute as @s[scores={item9=0, SelectedSpell=2}] run title @s actionbar ["",{"text":"\"Flow\"","color":"yellow"}]
 
 
 

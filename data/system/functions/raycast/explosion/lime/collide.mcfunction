@@ -1,6 +1,6 @@
 execute positioned ~ ~ ~ as @e[distance=..4, team=!Lime] run function system:effect/soft_wither
 execute positioned ~ ~ ~ as @e[distance=..4, team=Lime] run function system:effect/burst_heal
-execute positioned ~ ~ ~ as @e[distance=..4, team=!Lime] run function system:effect/burst_heal
+execute positioned ~ ~ ~ as @e[distance=..4, team=!Lime] run function system:effect/minimum_damage
 
 
 particle sonic_boom ~ ~ ~ 0.1 0.1 0.1 0.1 1 force
