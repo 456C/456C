@@ -11,13 +11,14 @@ execute as @a[scores={leaveGame=1..}] run function system:joining_logic/serverle
 
 # New Players Setup
 
+tag @a remove NotNew3
 tag @a remove NotNew2
 tag @a remove NotNew
-execute as @a[tag=NotNew3] run attribute @s generic.max_health base set 14
-execute as @a[tag=NotNew3] run attribute @s generic.attack_speed base set 3.9
-execute as @a[tag=NotNew3] run attribute @s minecraft:generic.max_absorption base set 6
-execute as @a[tag=!NotNew3] run team join Solo @s
-execute as @a[tag=!NotNew3] run tag @s add NotNew3
+execute as @a[tag=!NotNew4] run attribute @s generic.max_health base set 20
+execute as @a[tag=!NotNew4] run attribute @s generic.attack_speed base set 3.9
+execute as @a[tag=!NotNew4] run attribute @s minecraft:generic.max_absorption base set 6
+execute as @a[tag=!NotNew4] run team join Solo @s
+execute as @a[tag=!NotNew4] run tag @s add NotNew4
 
 execute as @a[tag=!add3tokens2] run scoreboard players add @s Tokens 3
 execute as @a[tag=!add3tokens2] run scoreboard players add @s Points 0
@@ -92,6 +93,8 @@ execute if score tick20hz obj matches 0 as @e[scores={item7=1..}] as @s run func
 execute if score tick20hz obj matches 0 as @e[scores={item8=1..}] as @s run function system:items/item8
 execute if score tick20hz obj matches 0 as @e[scores={item9=1..}] as @s run function system:items/item9
 execute if score tick20hz obj matches 0 as @e[scores={item10=1..}] as @s run function system:items/item10
+execute if score tick20hz obj matches 0 as @e[scores={item11=1..}] as @s run function system:items/item11
+execute if score tick20hz obj matches 0 as @e[scores={item11=1..}] as @s run function system:items/item12
 
 
 # item cooldowns
@@ -125,8 +128,8 @@ execute if score tick60hz obj matches 0 as @a[scores={item9=1..},nbt=!{SelectedI
 execute as @e[nbt={SelectedItem:{ tag:{groundslam:1b}, id:"minecraft:netherite_upgrade_smithing_template"}}] run function system:items/timers/item10
 execute if score tick60hz obj matches 0 as @e[scores={item10=1..},nbt=!{SelectedItem:{ tag:{groundslam:1b}, id:"minecraft:netherite_upgrade_smithing_template"}}] run xp set @s 0 levels
 
-# spawn mobs
-execute if score tick120hz obj matches 0 as @e[tag=summon, type=marker] run function system:mob_waves/summon
+execute as @e[nbt={SelectedItem:{ tag:{sectionbow:1b}, id:"minecraft:bow"}}] run function system:items/timers/item11
+execute if score tick60hz obj matches 0 as @e[scores={item11=1..},nbt=!{SelectedItem:{ tag:{groundslam:1b}, id:"minecraft:bow"}}] run xp set @s 0 levels
 
 # item util
 execute as @e[tag=talisman] run function system:items/item_util/item2
@@ -175,10 +178,42 @@ execute if score tick60hz obj matches 0 at @e[type=marker,tag=spawner] run funct
 execute if score tick120hz obj matches 0 at @e[tag=floor1_hoglin_spawner] as @e[tag=floor1_hoglin,distance=40..] run tp @s @e[tag=floor1_hoglin_spawner,limit=1,sort=nearest] 
 
 
-execute if score tick60hz obj matches 0 at @e[tag=section] run particle end_rod ~ ~ ~ 4 4 4 0.001 1 force
-execute if score tick60hz obj matches 0 at @e[tag=section] run function system:section/fill
-execute at @e[type=marker,tag=section_map] as @a[distance=..250] run function system:section/capture
-execute if score tick120hz obj matches 0 run function system:section/perform_count
+# sections
+execute if score tick60hz obj matches 0 at @e[tag=section] run particle end_rod ~ ~ ~ 7 7 7 0.001 1 force
+execute if score tick20hz obj matches 0 as @e[tag=section,tag=!processed] at @s run function system:section/fill
+execute if score tick120hz obj matches 1 run function system:section/perform_count
+
+# capture fast
+execute if score tick3hz obj matches 0 at @e[type=marker,tag=section_map] as @a[distance=..250] run function system:section/capture
+
+
+# Game TP setup
+
+execute if score $game_select obj2 matches 1 at @e[tag=lobby2] as @a[distance=..4] at @s if block ~ ~ ~ end_gateway run function system:section/begin_tp
+
+# Prevent item use in lobby2
+
+execute if score tick60hz obj matches 0 at @e[type=marker,tag=lobby2] as @a[distance=..50] run function system:items/item_util/lobby_reset 
+
+
+# execute if score tick120hz obj matches 0 if score $game_select obj2 matches 1 if score 
+
+
+execute if score tick60hz obj matches 0 run scoreboard players reset $global_players obj2
+execute if score tick60hz obj matches 0 as @a run scoreboard players add $global_players obj2 1
+
+
+
+execute if score tick20hz obj matches 0 at @e[tag=s_red] run particle lava ~ ~ ~ 1 1 1 2 1
+
+# global timer reminders
+
+execute if score $game_select obj2 matches 1 if score tick20hz obj matches 0 run function system:game_progress/sections
+execute if score $game_select obj2 matches 1.. if score tick20hz obj matches 0 run function system:game_progress/s_display
+execute if score $game_select obj2 matches 1 if score tick20hz obj matches 0 run function system:game_progress/pregame/sections
+
+# during game fx
+execute if score tick120hz obj matches 0 run function system:section/advantage/heal_overtime
 
 
 # Marker for sections tags:
@@ -186,3 +221,9 @@ execute if score tick120hz obj matches 0 run function system:section/perform_cou
 # section: assigns that the marker is a section
 # d_<color>: default origin section of a color
 # s_<color>: the team that has captured
+# processed: prevents from being filled and lagging the server, taking this tag off will fill and re-implement tag on a section
+
+# Ideas
+#
+# Insentive to invade enemy
+#

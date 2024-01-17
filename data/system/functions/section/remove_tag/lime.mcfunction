@@ -1,3 +1,5 @@
-tag @s remove magenta
-tag @s remove teal
-tag @s remove orange 
+tag @s remove s_magenta
+tag @s remove s_teal
+tag @s remove s_orange 
+tag @s remove processed
+

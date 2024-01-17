@@ -1,0 +1,4 @@
+execute if score $game_timer obj2 matches 0..600 if score $game_select obj2 matches 1 at @e[tag=s_orange] as @a[team=Orange,distance=..3] run scoreboard players set @s mediumHealing 2
+execute if score $game_timer obj2 matches 0..600 if score $game_select obj2 matches 1 at @e[tag=s_teal] as @a[team=Teal,distance=..3] run scoreboard players set @s mediumHealing 2 
+execute if score $game_timer obj2 matches 0..600 if score $game_select obj2 matches 1 at @e[tag=s_lime] as @a[team=Lime,distance=..3] run scoreboard players set @s mediumHealing 2
+execute if score $game_timer obj2 matches 0..600 if score $game_select obj2 matches 1 at @e[tag=s_magenta] as @a[team=Magenta,distance=..3] run scoreboard players set @s mediumHealing 2

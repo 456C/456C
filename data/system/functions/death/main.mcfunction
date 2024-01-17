@@ -14,7 +14,8 @@ execute if score @s Death matches 1 run give @s[scores={SelectedClass=3,item5=0}
 
 
 scoreboard players add @s Death 1
-execute if score @s Death matches 90 run tp @s 912 9 451 0.9 3.7
+execute if score @s Death matches 90 if score $lobby_select obj2 matches 1 run tp @s 912 9 451 0.9 3.7
+execute if score @s Death matches 90 if score $lobby_select obj2 matches 2 run tp @s 1030.174 10 448.098 -0.8 -0.5
 execute if score @s Death matches 90 run gamemode adventure @s
 execute if score @s Death matches 90.. run scoreboard players reset @s Death
 

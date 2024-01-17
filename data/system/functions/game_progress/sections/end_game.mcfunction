@@ -1,0 +1,1 @@
+scoreboard players set $game_timer obj2 4
